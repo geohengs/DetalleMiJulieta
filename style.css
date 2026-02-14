@@ -1,0 +1,342 @@
+/* style.css - VERSIÓN MORADA (PURPLE EDITION) */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a; /* Negro profundo */
+    color: #e0e0e0; /* Blanco suave para leer mejor */
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Pantalla de Bienvenida */
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #050505;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 1s ease;
+}
+
+#welcome-screen h1 {
+    font-family: 'Pacifico', cursive;
+    color: #c77dff; /* Lila brillante */
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+#start-btn {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    background: #7b2cbf; /* Morado Intenso */
+    color: white;
+    border: 2px solid #9d4edd; /* Borde más claro */
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(123, 44, 191, 0.5); /* Resplandor morado */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#start-btn:hover {
+    transform: scale(1.1);
+    background: #9d4edd;
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.8);
+}
+
+/* Clases de utilidad */
+.hidden { display: none; }
+
+.fade-in { animation: fadeIn 2s forwards; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Secciones Generales */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    min-height: 90vh; /* Ocupa casi toda la pantalla en PC */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    color: #e0aaff; /* Lila pastel muy bonito */
+    margin-bottom: 30px;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(224, 170, 255, 0.3);
+}
+
+/* Hero Section (La primera que ve al entrar) */
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 15px;
+    background: -webkit-linear-gradient(#e0aaff, #7b2cbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.scroll-indicator {
+    font-size: 2rem;
+    color: #7b2cbf;
+    margin-top: 15px;
+    cursor: pointer;
+    animation: heartbeat 1.5s infinite; 
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
+}
+
+/* Galería de Fotos (Ajustada para PC) */
+.photo-grid {
+    display: grid;
+    /* En PC se verán 3 fotos por fila, en móvil 1 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    margin-top: 20px;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 350px; /* Un poco más grandes para PC */
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    border: 2px solid transparent;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    border-color: #c77dff;
+    box-shadow: 0 0 20px rgba(199, 125, 255, 0.4);
+}
+
+/* Videos (Estilo Tarjeta Gamer) */
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+}
+
+.video-card {
+    background: #10002b; /* Fondo morado muy oscuro */
+    padding: 15px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 500px; /* Videos grandes para PC */
+    border: 1px solid #3c096c;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 15px;
+    outline: none;
+}
+
+.video-card h3 {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: #e0aaff;
+}
+
+/* Carta Final */
+.letter-section {
+    background: linear-gradient(180deg, #0a0a0a 0%, #240046 100%);
+}
+
+.letter-content {
+    background: rgba(16, 0, 43, 0.8); /* Fondo semitransparente */
+    padding: 60px;
+    border-radius: 20px;
+    max-width: 700px;
+    line-height: 1.8;
+    border: 1px solid #7b2cbf;
+    box-shadow: 0 0 30px rgba(123, 44, 191, 0.2);
+    font-size: 1.1rem;
+}
+
+.signature {
+    margin-top: 30px;
+    font-family: 'Pacifico', cursive;
+    color: #c77dff;
+    font-size: 1.5rem;
+    text-align: right;
+}
+
+footer {
+    padding: 30px;
+    color: #555;
+}
+
+.sticker-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0; /* Espacio arriba y abajo */
+}
+
+.sticker-animado {
+    width: 150px; /* Tamaño del sticker */
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(199, 125, 255, 0.5)); /* Resplandor morado suave */
+    animation: float 3s ease-in-out infinite; /* Una pequeña animación de flotar */
+}
+
+/* Animación opcional para que flote suavemente */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* === NUEVOS ESTILOS PARA GALERÍA Y LIGHTBOX === */
+
+/* Estilo para el contenedor de cada foto y su título */
+.gallery-item {
+    background: #10002b;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #3c096c;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Manito para indicar clic */
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(199, 125, 255, 0.4);
+    border-color: #c77dff;
+}
+
+/* Ajustamos la imagen dentro de la tarjeta */
+.gallery-item img {
+    width: 100%;
+    height: 300px; /* Altura fija para la miniatura */
+    object-fit: cover; /* Sigue recortando la miniatura para que se vea ordenada */
+    display: block;
+}
+
+/* Estilo del título debajo de la foto */
+figcaption {
+    padding: 15px;
+    color: #e0aaff; /* Lila pastel */
+    font-family: 'Pacifico', cursive;
+    font-size: 1.1rem;
+}
+
+/* --- ESTILOS DEL LIGHTBOX (Foto Grande) --- */
+#lightbox {
+    position: fixed;
+    z-index: 2000; /* Por encima de todo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.95); /* Fondo casi negro */
+    display: flex; /* Usamos flex para centrar */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none; /* No interactúa si está oculto */
+    transition: opacity 0.3s ease;
+}
+
+/* Cuando el lightbox está activo */
+#lightbox.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* La imagen grande */
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh; /* Máximo el 80% del alto de la pantalla */
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(123, 44, 191, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+#lightbox.active .lightbox-content {
+    transform: scale(1); /* Efecto zoom al abrir */
+}
+
+/* El título en grande */
+#caption {
+    margin-top: 20px;
+    color: #c77dff;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+/* Botón de cerrar (X) */
+#close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#close-lightbox:hover {
+    color: #c77dff;
+}
+
+/* Estilo para la fecha (Badge) */
+.date-badge {
+    margin-top: 25px;       /* Separación del subtítulo */
+    margin-bottom: 10px;    /* Separación de la flecha */
+    padding: 8px 25px;      /* Espacio interior (relleno) */
+    border: 1px solid #7b2cbf; /* Borde morado fino */
+    border-radius: 50px;    /* Bordes muy redondos (cápsula) */
+    color: #e0aaff;         /* Color de letra lila claro */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;      /* Letra pequeña y elegante */
+    letter-spacing: 3px;    /* Letras separadas (estilo cinemático) */
+    text-transform: uppercase;
+    background: rgba(123, 44, 191, 0.1); /* Fondo morado muy transparente */
+    box-shadow: 0 0 15px rgba(123, 44, 191, 0.3); /* Resplandor suave */
+    animation: fadeIn 3s forwards; /* Que aparezca suavemente */
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    14% { transform: scale(1.3); }
+    28% { transform: scale(1); }
+    42% { transform: scale(1.3); }
+    70% { transform: scale(1); }
+}
